@@ -1,2 +1,2 @@
 # campelmag
-Scripts para calculo do campo elétrico e magnético em uma LT
+Scripts para cálculo do campo elétrico e magnético em uma LT
