@@ -31,6 +31,6 @@ function Brms(I,H,D,P)
   SBh = sum(Bkh,2);
   Bmag = sqrt(real(SBx).^2 + imag(SBx).^2 + real(SBh).^2 + imag(SBh).^2);
 
-  return [SBr*(1e6) SBx*(1e6) SBh*(1e6) Bmag*(1e6)];
+  return [SBr*(1e4) SBx*(1e4) SBh*(1e4) Bmag*(1e4)];
 
 end
