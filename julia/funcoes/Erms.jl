@@ -1,7 +1,7 @@
 """
 ...
 
-* Retorna um vetor com as tensões correspondentes aos pontos [SEx SEy Erms];
+* Retorna um vetor com os campos eletricos correspondentes aos pontos [SEx SEy Erms];
 * Erms(P,H,D,Q)
 * P = Vetor com as caracteristicas da linha de medição [-X X Passo Altura]
 * H = Vetor com as posições verticais dos cabos. [A B C]

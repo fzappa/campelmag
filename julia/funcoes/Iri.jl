@@ -4,7 +4,7 @@
 * Retorna a Matriz com as correntes(2,3)
 * Iri(I, Angulos)
 * I = Corrente por fase (ckt equlibrado)
-* Angulos = Angulos de defasegem das fases. [A B C]
+* Angulos = Angulos de defasagem das fases. [A B C]
 *
 
 ...
