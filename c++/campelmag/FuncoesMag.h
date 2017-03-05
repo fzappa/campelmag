@@ -3,13 +3,13 @@
 
 #include <vector>
 #include <eigen3/Eigen/Dense>
-//
-////Campo magnetico resultante
-//Eigen::MatrixXd* Brms(const std::vector<double>& I, 
-//											const std::vector<double>& H, 
-//											const std::vector<double>& D, 
-//											const std::vector<double>& P);
-//
+
+//Campo magnetico resultante
+Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I, 
+											 const std::vector<double>& H, 
+											 const std::vector<double>& D, 
+											 const std::vector<double>& P);
+
 ////Campo eletrico resultante
 //Eigen::MatrixXd* CalcEkv(const std::vector<double>& H,
 //												 const std::vector<double>& D,
@@ -45,16 +45,14 @@ double CoronaEC(const double& M,
 								const double& Dcond);
 
 
-//// Calcula o diametro equivalente do feixe											 
-//inline double db(const double& S, 
-//								 const double& N);
-//
-//
-//// Calcula o feixe equivalente											 
-//inline double deq(const double& db0, 
-//									const double& D, 
-//									const double& N);
-//
+// Calcula o diametro equivalente do feixe											 
+double db(const double& S, const double& N);
+
+
+// Calcula o feixe equivalente											 
+double deq(const double& db0, const double& D, const double& N);
+
+
 //// retorna os campos eletricos nos pontos 
 //Eigen::MatrixXd* Erms(const std::vector<double>& P, 
 //											const std::vector<double>& H, 
@@ -78,11 +76,17 @@ double CoronaEC(const double& M,
 //Eigen::MatrixXd* Pkl(const Eigen::MatrixXd& Skll0, 
 //										 const Eigen::MatrixXd& Skl0);
 //
-//// Profundidade da imagem do condutor para o campo magnetico
-//inline double ProfImg(const double& R, 
-//											const double& P, 
-//											const double& FHz);
-//
+
+
+
+
+// Profundidade da imagem do condutor para o campo magnetico
+double ProfImg(const double& R, 
+							 const double& P, 
+							 const double& FHz);
+
+
+
 //// Calcula a distância entre os condutores k e l
 //Eigen::MatrixXd* Skl(const std::vector<double>& D, 
 //										 const std::vector<double>& H);
@@ -96,6 +100,14 @@ double CoronaEC(const double& M,
 //										 const std::vector<double>& AngABC);
 
 
+
+// Criar sequencia de dados
+template <typename T>
+inline const std::vector<T>* collect(T const& inicio, T const& passo, T const& fim){ 
+  std::vector<T>* v = new std::vector<T>;
+  for(T i=inicio; i<=fim; i+=passo){v->push_back(i);}
+  return v; 
+} 
 
 
 
