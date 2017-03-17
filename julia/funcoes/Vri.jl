@@ -1,7 +1,7 @@
 """
 ...
 
-* Retorna a Matriz com as tensões(2,3)
+* Retorna a Matriz com as tensões(3,2)
 * Vri(V, Angulos)
 * V = Tensão de fase
 * Angulos = Angulos de defasegem das fases. [A B C]

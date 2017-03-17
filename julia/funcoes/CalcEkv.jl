@@ -26,8 +26,8 @@ function CalcEkv(H, D, EspacSubCond, Ncond, Dcabo, V, AngulosABC, LinhaDeMedicao
   P = MatrizP(Mp,Mm);
   C = inv(P);
   V = Vri(V,AngulosABC);
-  Vr = V[:,1];
-  Vi = V[:,2];
+  #Vr = V[:,1];
+  #Vi = V[:,2];
 
   Q = C*V;
 

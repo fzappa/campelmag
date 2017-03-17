@@ -81,7 +81,9 @@ println(@sprintf "Campo Magnético Máximo = %5.2f [micro Tesla]\n\n" maximum(re
 
 #display(plt.plot(Px, Py-3.0801, color="red", label="Campo Elétrico"));
 plt.figure(1);
-display(plt.plot(Px, EkVm[:,3], color="red", marker="None", label="Campo Elétrico"));
+#display(plt.plot(Px, EkVm[:,1], color="green", marker="None", label="E_x"));
+#display(plt.plot(Px, EkVm[:,2], color="blue", marker="None", label="E_y"));
+display(plt.plot(Px, EkVm[:,3], color="red", marker="None", label="E_max"));
 display(plt.title("Campo Elétrico x Perfil de medição"));
 plt.xlabel("Posição na faixa de passagem [m]");
 plt.ylabel("Campo Elétrico [kV/m]");
@@ -90,7 +92,10 @@ plt.legend(loc="upper right",fancybox="true");
 
 
 plt.figure(2);
-display(plt.plot(Px, B[:,4], color="green", marker="None", label="Campo Magnético"));
+display(plt.plot(Px, B[:,4], color="red", marker="None", label="Bmag"));
+#display(plt.plot(Px, B[:,3], color="green", marker="None", label="Bh"));
+#display(plt.plot(Px, B[:,2], color="blue", marker="None", label="Bx"));
+#display(plt.plot(Px, B[:,1], color="cyan", marker="None", label="Br"));
 display(plt.title("Campo Magnético x Perfil de medição"));
 #display(plt.title("\$\\alpha + \\beta\$"));
 plt.xlabel("Posição na faixa de passagem [m]");
