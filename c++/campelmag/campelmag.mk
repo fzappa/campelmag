@@ -5,15 +5,15 @@
 ## Release
 ProjectName            :=campelmag
 ConfigurationName      :=Release
-WorkspacePath          :=/home/arquivos/git/campelmag/c++
-ProjectPath            :=/home/arquivos/git/campelmag/c++/campelmag
+WorkspacePath          :=/home/alan/Dropbox/git/campelmag/c++
+ProjectPath            :=/home/alan/Dropbox/git/campelmag/c++/campelmag
 IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=alan
-Date                   :=03/04/17
+Date                   :=03/18/17
 CodeLitePath           :=/home/alan/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -92,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/arquivos/git/campelmag/c++/campelmag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
@@ -100,7 +100,7 @@ $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix): FuncoesMag.cpp $(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/arquivos/git/campelmag/c++/campelmag/FuncoesMag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/FuncoesMag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix): FuncoesMag.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix) -MM FuncoesMag.cpp
 

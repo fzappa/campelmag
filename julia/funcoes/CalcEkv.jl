@@ -17,8 +17,8 @@
 ...
 """
 function CalcEkv(H, D, EspacSubCond, Ncond, Dcabo, V, AngulosABC, LinhaDeMedicao)
-  DB = db(EspacSubCond, Ncond);
-  DEQ = deq(DB,Dcabo,Ncond);
+  DB = db(EspacSubCond, Ncond)
+  DEQ = deq(DB,Dcabo,Ncond)
 
   Mp = Pkk(H,DEQ);  #Matriz própria
   Mm = Pkl(Skll(D,H),Skl(D,H)); # Matriz mútua

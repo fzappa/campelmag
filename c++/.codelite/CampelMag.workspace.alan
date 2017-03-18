@@ -6,6 +6,6 @@
     <Include Path="/usr/include/"/>
   </WorkspaceParserPaths>
   <Environment Name="&lt;Use Defaults&gt;"/>
-  <WorkspaceParserFlags flags="7"/>
+  <WorkspaceParserFlags flags="6"/>
   <WorkspaceParserMacros/>
 </Workspace>
