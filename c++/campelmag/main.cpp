@@ -7,7 +7,6 @@
 
 
 #include "FuncoesMag.h"
-//#include "Constantes.h"
 #include "GeraGrafico.h"
 #include "ParserXML.h"
 

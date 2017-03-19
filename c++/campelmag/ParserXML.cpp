@@ -1,4 +1,3 @@
-
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/foreach.hpp>
@@ -12,8 +11,6 @@
 //Referencias
 //http://www.boost.org/doc/libs/1_42_0/doc/html/boost_propertytree/tutorial.html
 //http://www.technical-recipes.com/2014/using-boostproperty_tree/
-
-//TODO Implementar leitura de vetores do XML
 
 void conf::load(const std::string &filename)
 {

@@ -11,7 +11,6 @@
     <File Name="main.cpp"/>
     <File Name="FuncoesMag.cpp"/>
     <File Name="FuncoesMag.h"/>
-    <File Name="Constantes.h"/>
     <File Name="GeraGrafico.cpp"/>
     <File Name="GeraGrafico.h"/>
     <File Name="ParserXML.cpp"/>

@@ -1,11 +1,9 @@
 #include <iostream>
-//#include <cmath>
 #include <vector>
 #include <complex>
 
 #include <eigen3/Eigen/Dense>
 #include <boost/math/constants/constants.hpp>
-
 
 #include "FuncoesMag.h"
 #include "ParserXML.h"
