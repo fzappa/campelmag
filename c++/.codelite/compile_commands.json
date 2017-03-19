@@ -4,6 +4,10 @@
   "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/FuncoesMag.cpp"
  }, {
   "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
+  "command": "/usr/bin/g++ -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -I. -I. -MG -MP -MT./Release/ParserXML.cpp.o -MF./Release/ParserXML.cpp.o.d -MM ParserXML.cpp",
+  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/ParserXML.cpp"
+ }, {
+  "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
   "command": "/usr/bin/g++ -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -I. -I. -MG -MP -MT./Release/main.cpp.o -MF./Release/main.cpp.o.d -MM main.cpp",
   "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp"
  }, {
@@ -12,22 +16,18 @@
   "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/GeraGrafico.cpp"
  }, {
   "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
-  "command": "/usr/bin/g++ -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -I. -I. -MG -MP -MT./Release/ParserXML.cpp.o -MF./Release/ParserXML.cpp.o.d -MM ParserXML.cpp",
-  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/ParserXML.cpp"
+  "command": "/usr/bin/g++ -c /home/arquivos/git/campelmag/c++/campelmag/GeraGrafico.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/GeraGrafico.cpp.o -I. -I.",
+  "file": "/home/arquivos/git/campelmag/c++/campelmag/GeraGrafico.cpp"
  }, {
   "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
-  "command": "/usr/bin/g++ -c /home/alan/Dropbox/git/campelmag/c++/campelmag/GeraGrafico.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/GeraGrafico.cpp.o -I. -I.",
-  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/GeraGrafico.cpp"
+  "command": "/usr/bin/g++ -c /home/arquivos/git/campelmag/c++/campelmag/main.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/main.cpp.o -I. -I.",
+  "file": "/home/arquivos/git/campelmag/c++/campelmag/main.cpp"
  }, {
   "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
-  "command": "/usr/bin/g++ -c /home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/main.cpp.o -I. -I.",
-  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp"
+  "command": "/usr/bin/g++ -c /home/arquivos/git/campelmag/c++/campelmag/ParserXML.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/ParserXML.cpp.o -I. -I.",
+  "file": "/home/arquivos/git/campelmag/c++/campelmag/ParserXML.cpp"
  }, {
   "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
-  "command": "/usr/bin/g++ -c /home/alan/Dropbox/git/campelmag/c++/campelmag/ParserXML.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/ParserXML.cpp.o -I. -I.",
-  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/ParserXML.cpp"
- }, {
-  "directory": "/home/alan/Dropbox/git/campelmag/c++/campelmag",
-  "command": "/usr/bin/g++ -c /home/alan/Dropbox/git/campelmag/c++/campelmag/FuncoesMag.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/FuncoesMag.cpp.o -I. -I.",
-  "file": "/home/alan/Dropbox/git/campelmag/c++/campelmag/FuncoesMag.cpp"
+  "command": "/usr/bin/g++ -c /home/arquivos/git/campelmag/c++/campelmag/FuncoesMag.cpp -lboost_iostreams -lboost_system -lboost_filesystem -lboost_thread -march=native -O2 -DNDEBUG -std=c++14 -Wall -DARMA_NO_DEBUG -DNDEBUG -o ./Release/FuncoesMag.cpp.o -I. -I.",
+  "file": "/home/arquivos/git/campelmag/c++/campelmag/FuncoesMag.cpp"
  }]

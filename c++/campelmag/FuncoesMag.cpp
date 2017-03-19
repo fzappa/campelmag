@@ -3,6 +3,11 @@
 #include <complex>
 
 #include <eigen3/Eigen/Dense>
+
+// Para definicoes de constantes do eigen
+#include <boost/units/io.hpp>
+#include <boost/units/systems/si.hpp>
+#include <boost/units/systems/si/codata_constants.hpp>
 #include <boost/math/constants/constants.hpp>
 
 #include "FuncoesMag.h"
@@ -13,9 +18,11 @@ using namespace std;
 // chamada para complexo
 typedef std::complex<double> cx;
 
-
+// Constantes do BOOST
+// http://www.boost.org/doc/libs/1_60_0/doc/html/boost_units/Reference.html
+// http://www.boost.org/doc/libs/1_46_0/libs/math/doc/sf_and_dist/html/math_toolkit/toolkit/internals1/constants.html
 constexpr double PI {boost::math::constants::pi<double>()};
-constexpr double EPSILON {8.854187817620389850536563031710750260608e-12};
+const double EPSILON {boost::units::si::constants::codata::epsilon_0 / boost::units::si::farad * boost::units::si::meter};
 
 
 
@@ -32,12 +39,13 @@ constexpr double EPSILON {8.854187817620389850536563031710750260608e-12};
 **/
 Eigen::MatrixXcd* Brms(const conf& dados){
 
+	// Reescrevendo para trabalhar com o conf
 	const Eigen::Vector3d AngulosABC {dados.angabc[0],dados.angabc[1],dados.angabc[2]};
 	const Eigen::Vector3cd* I {Iri(dados.corrente,AngulosABC)};
 
 	const Eigen::Vector3d& H{dados.hmin,dados.hmin,dados.hmin};
 	const Eigen::Vector3d& D{dados.pxfeixes[0],dados.pxfeixes[1],dados.pxfeixes[2]};
-	const vector<double>& P {dados.linhamed[0], dados.linhamed[1], dados.linhamed[2], dados.linhamed[3]};
+	const vector<double>& P{dados.linhamed[0], dados.linhamed[1], dados.linhamed[2], dados.linhamed[3]};
 
 	//Passando por referencia, para facilitar a leitura
   const double& max {P[0]+P[2]*((P[1]-P[0])/P[2])};
