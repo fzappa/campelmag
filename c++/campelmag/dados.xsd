@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="projeto" type="projetoType"/>
+  <xs:complexType name="angabcType">
+    <xs:sequence>
+      <xs:element type="xs:float" name="a"/>
+      <xs:element type="xs:float" name="b"/>
+      <xs:element type="xs:float" name="c"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="linhamedType">
+    <xs:sequence>
+      <xs:element type="xs:float" name="xmin"/>
+      <xs:element type="xs:float" name="xmax"/>
+      <xs:element type="xs:float" name="passo"/>
+      <xs:element type="xs:float" name="hmed"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pxfeixesType">
+    <xs:sequence>
+      <xs:element type="xs:float" name="e"/>
+      <xs:element type="xs:float" name="c"/>
+      <xs:element type="xs:float" name="d"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="casoType">
+    <xs:sequence>
+      <xs:element type="xs:float" name="tensao"/>
+      <xs:element type="xs:float" name="pot"/>
+      <xs:element type="angabcType" name="angabc"/>
+      <xs:element type="linhamedType" name="linhamed"/>
+      <xs:element type="xs:float" name="coefm"/>
+      <xs:element type="xs:float" name="hmax"/>
+      <xs:element type="xs:float" name="flecha"/>
+      <xs:element type="xs:float" name="espacsubcond"/>
+      <xs:element type="xs:float" name="diamcabo"/>
+      <xs:element type="xs:byte" name="ncond"/>
+      <xs:element type="pxfeixesType" name="pxfeixes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="projetoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="nome"/>
+      <xs:element type="xs:byte" name="grafico">
+        <xs:annotation>
+          <xs:documentation>
+      1 - PS
+      2 - SVG
+      3 - JPG
+      4 - PNG
+      5 - PDF
+      6 - EPSLaTex
+    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="casoType" name="caso"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

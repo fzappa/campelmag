@@ -12,6 +12,11 @@
     <File Name="FuncoesMag.cpp"/>
     <File Name="FuncoesMag.h"/>
     <File Name="Constantes.h"/>
+    <File Name="GeraGrafico.cpp"/>
+    <File Name="GeraGrafico.h"/>
+    <File Name="ParserXML.cpp"/>
+    <File Name="ParserXML.h"/>
+    <File Name="gnuplot_i.hpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

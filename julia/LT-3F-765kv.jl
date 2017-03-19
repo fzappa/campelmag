@@ -19,7 +19,7 @@ using PyCall  #Para poder executar como script
 V = 765e3;
 
 #Potência Transmitida (W)
-P = 2.2e9;
+P = 1.2e9;
 Ir = P/V;
 
 #Angulos das fases (graus)
@@ -30,7 +30,7 @@ AngC = -120;
 AngulosABC = [AngA AngB AngC];
 
 #Corrente com a defasagem
-Itemp = Iri(1120,AngulosABC);
+Itemp = Iri(Ir,AngulosABC);
 IA = complex(Itemp[1,1],Itemp[1,2]);
 IB = complex(Itemp[2,1],Itemp[2,2]);
 IC = complex(Itemp[3,1],Itemp[3,2]);
@@ -62,7 +62,7 @@ EkVm = CalcEkv(H, D, EspacSubCond, Ncond, Dcabo, V, AngulosABC, LinhaDeMedicao);
 #println(@sprintf "kV/m máximo = %5.2f [kV/m]" maximum(E[:,3]));
 println(@sprintf "Numero de pontos de medição = %5.2f" length(Px));
 println(@sprintf "Altura de partida dos cabos = %5.2f" H[1,1]+FLECHA+EspacSubCond/2);
-println(@sprintf "Altura dos cabos no ponto mais baixo = %5.2f" H[1,1]);
+println(@sprintf "Altura dos cabos no ponto mais baixo = %5.2f" H[1]);
 #println(@sprintf "kV/m máximo = %5.2f [kV/m]\n\n" maximum(Py)-3.0801);
 
 #Encontra a menor altura para manter o limite máximo de campo

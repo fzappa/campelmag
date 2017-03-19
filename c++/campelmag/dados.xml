@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="dados.xsl"?>
+<projeto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="dados.xsd">
+    <nome>LT 765kV - CAMPO MAGNÉTICO</nome>
+    <!--
+      1 - PS
+      2 - SVG
+      3 - JPG
+      4 - PNG
+      5 - PDF
+      6 - EPSLaTex
+    -->
+    <grafico>4</grafico>
+      <caso>
+        <tensao>765e3</tensao>
+        <pot>2.2e9</pot>
+        <angabc>
+            <a>120.0</a>
+            <b>0.0</b>
+            <c>-120.0</c>
+        </angabc>
+        <linhamed>
+          <xmin>-80.0</xmin>
+          <xmax>80.0</xmax>
+          <passo>0.5</passo>
+          <hmed>1.5</hmed>
+        </linhamed>
+        <coefm>0.87</coefm>
+        <hmax>25.0</hmax>
+        <flecha>8.63</flecha>
+        <espacsubcond>0.457</espacsubcond>
+        <diamcabo>0.02959</diamcabo>
+        <ncond>4</ncond>
+        <pxfeixes>
+          <e>-14.34</e>
+          <c>0.0</c>
+          <d>14.34</d>
+        </pxfeixes>
+      </caso>
+</projeto>

@@ -3,22 +3,13 @@
 
 #include <vector>
 #include <eigen3/Eigen/Dense>
+#include "ParserXML.h"
 
 //Campo magnetico resultante
-Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I,
-											 const Eigen::Vector3d& H,
-											 const Eigen::Vector3d& D,
-											 const std::vector<double>& P);
+Eigen::MatrixXcd* Brms(const conf& dados);
 
 //Campo eletrico resultante
-Eigen::MatrixXcd* CalcEkv(const Eigen::Vector3d& H,
-												  const Eigen::Vector3d& D,
-												  const double& EspacSubCond,
-												  const double& Ncond,
-												  const double& Dcabo,
-												  const double& V,
-												  const Eigen::Vector3d& AngABC,
-												  const std::vector<double>& P);
+Eigen::MatrixXcd* CalcEkv(const conf& dados);
 
 // Tensao critica de corona
 double CoronaVc(const double& M,

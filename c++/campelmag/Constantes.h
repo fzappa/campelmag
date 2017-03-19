@@ -7,20 +7,19 @@
 using namespace std;
 
 // chamada para complexo
-typedef std::complex<double> cx;
 
 //Tensão da Linha (V)
 constexpr double V {765e3};
 
 //Potência Transmitida (W)
-constexpr double P {2.2e9};
+constexpr double P {1.2e9};
 constexpr double Ir {P/V};
 
 //Angulos das fases (graus)
 const Eigen::Vector3d AngulosABC {120,0,-120};
 
 //Corrente com a defasagem
-const Eigen::Vector3cd* Itemp {Iri(1120,AngulosABC)};
+const Eigen::Vector3cd* Itemp {Iri(Ir,AngulosABC)};
 const Eigen::Vector3cd I {*Itemp};
 
 //Caracteristicas Mecânicas

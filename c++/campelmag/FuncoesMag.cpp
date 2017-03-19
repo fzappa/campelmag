@@ -8,6 +8,7 @@
 
 
 #include "FuncoesMag.h"
+#include "ParserXML.h"
 
 using namespace std;
 
@@ -31,10 +32,14 @@ constexpr double EPSILON {8.854187817620389850536563031710750260608e-12};
 *
 * EPRI AC Transmission Line Reference Book
 **/
-Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I,
-											 const Eigen::Vector3d& H,
-											 const Eigen::Vector3d& D,
-											 const vector<double>& P){
+Eigen::MatrixXcd* Brms(const conf& dados){
+
+	const Eigen::Vector3d AngulosABC {dados.angabc[0],dados.angabc[1],dados.angabc[2]};
+	const Eigen::Vector3cd* I {Iri(dados.corrente,AngulosABC)};
+
+	const Eigen::Vector3d& H{dados.hmin,dados.hmin,dados.hmin};
+	const Eigen::Vector3d& D{dados.pxfeixes[0],dados.pxfeixes[1],dados.pxfeixes[2]};
+	const vector<double>& P {dados.linhamed[0], dados.linhamed[1], dados.linhamed[2], dados.linhamed[3]};
 
 	//Passando por referencia, para facilitar a leitura
   const double& max {P[0]+P[2]*((P[1]-P[0])/P[2])};
@@ -58,9 +63,9 @@ Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I,
 	// Calcula o campo nas componentes
 	for(unsigned short int i=0; i < 3; ++i){
 		// Valores em Tesla
-		ptrBkr->col(i) = ( (2e-7)*I[i] ) /( ( ptrXm->array() - D[i] ).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
-    ptrBkx->col(i) = ( (2e-7)*I[i]*(ptrXm->array() - D[i])) / ( ( ptrXm->array() - D[i] ).square() + (Hm-H[i])*(Hm-H[i]) ).sqrt();
-    ptrBkh->col(i) = ( (2e-7)*I[i]*(Hm - H[i]) )/( (ptrXm->array() - D[i]).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
+		ptrBkr->col(i) = ( (2e-7)*(*I)[i] ) /( ( ptrXm->array() - D[i] ).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
+    ptrBkx->col(i) = ( (2e-7)*(*I)[i]*(ptrXm->array() - D[i])) / ( ( ptrXm->array() - D[i] ).square() + (Hm-H[i])*(Hm-H[i]) ).sqrt();
+    ptrBkh->col(i) = ( (2e-7)*(*I)[i]*(Hm - H[i]) )/( (ptrXm->array() - D[i]).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
 	}
 
 	// Converte os valore e armazena na forma [SBr SBx SBh Bmag]
@@ -73,6 +78,7 @@ Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I,
 	*ptrSaida *= 1e6;
 
 	// Limpa os ponteiros utilizados da memoria
+	delete I;
 	delete ptrXm;
 	delete ptrBkr;
 	delete ptrBkx;
@@ -94,14 +100,16 @@ Eigen::MatrixXcd* Brms(const Eigen::Vector3cd& I,
 * AngulosABC = Defasagem angular entre as fases - [AA AB AC] [graus]
 * P = Perfil de medição - [Xmin Xmax Passo Altura] [m]
 **/
-Eigen::MatrixXcd* CalcEkv(const Eigen::Vector3d& H,
-												  const Eigen::Vector3d& D,
-												  const double& EspacSubCond,
-												  const double& Ncond,
-												  const double& Dcabo,
-												  const double& V,
-												  const Eigen::Vector3d& AngABC,
-												  const std::vector<double>& P){
+Eigen::MatrixXcd* CalcEkv(const conf& dados){
+
+	const Eigen::Vector3d& H {dados.hmin, dados.hmin, dados.hmin};
+	const Eigen::Vector3d& D {dados.pxfeixes[0], dados.pxfeixes[1], dados.pxfeixes[2]};
+	const double& EspacSubCond {dados.espacsubcond};
+	const double& Ncond {dados.ncond};
+	const double& Dcabo {dados.diamcabo};
+	const double& V {dados.tensao};
+	const Eigen::Vector3d& AngABC {dados.angabc[0], dados.angabc[1], dados.angabc[2]};
+	const std::vector<double>& P {dados.linhamed[0], dados.linhamed[1], dados.linhamed[2], dados.linhamed[3]};
 
 	const double& DB {db(EspacSubCond,Ncond)};
 	const double& DEQ {deq(DB,Dcabo,Ncond)};
