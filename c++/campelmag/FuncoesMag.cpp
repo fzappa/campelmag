@@ -62,7 +62,7 @@ Eigen::MatrixXcd* Brms(const conf& dados){
 	//Ponteiros Matrizes complexas
 	Eigen::MatrixXcd* ptrBkr = new Eigen::MatrixXcd(ptrXm->size(),3);
 	Eigen::MatrixXcd* ptrBkx = new Eigen::MatrixXcd(ptrXm->size(),3);
-  Eigen::MatrixXcd* ptrBkh = new Eigen::MatrixXcd(ptrXm->size(),3);
+    Eigen::MatrixXcd* ptrBkh = new Eigen::MatrixXcd(ptrXm->size(),3);
 
 	Eigen::MatrixXcd* ptrSaida = new Eigen::MatrixXcd(ptrXm->size(),4);
 
@@ -70,15 +70,15 @@ Eigen::MatrixXcd* Brms(const conf& dados){
 	for(unsigned short int i=0; i < 3; ++i){
 		// Valores em Tesla
 		ptrBkr->col(i) = ( (2e-7)*(*I)[i] ) /( ( ptrXm->array() - D[i] ).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
-    ptrBkx->col(i) = ( (2e-7)*(*I)[i]*(ptrXm->array() - D[i])) / ( ( ptrXm->array() - D[i] ).square() + (Hm-H[i])*(Hm-H[i]) ).sqrt();
-    ptrBkh->col(i) = ( (2e-7)*(*I)[i]*(Hm - H[i]) )/( (ptrXm->array() - D[i]).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
+        ptrBkx->col(i) = ( (2e-7)*(*I)[i]*(ptrXm->array() - D[i])) / ( ( ptrXm->array() - D[i] ).square() + (Hm-H[i])*(Hm-H[i]) ).sqrt();
+        ptrBkh->col(i) = ( (2e-7)*(*I)[i]*(Hm - H[i]) )/( (ptrXm->array() - D[i]).square() + (Hm - H[i])*(Hm - H[i]) ).sqrt();
 	}
 
 	// Converte os valore e armazena na forma [SBr SBx SBh Bmag]
 	ptrSaida->col(0) = ptrBkr->rowwise().sum();
-  ptrSaida->col(1) = ptrBkx->rowwise().sum();
-  ptrSaida->col(2) = ptrBkh->rowwise().sum();
-  ptrSaida->col(3) = (ptrSaida->col(1).array().real().square() + ptrSaida->col(2).array().real().square()).sqrt();
+    ptrSaida->col(1) = ptrBkx->rowwise().sum();
+    ptrSaida->col(2) = ptrBkh->rowwise().sum();
+    ptrSaida->col(3) = (ptrSaida->col(1).array().real().square() + ptrSaida->col(2).array().real().square()).sqrt();
 
 	// Converte para micro Tesla
 	*ptrSaida *= 1e6;

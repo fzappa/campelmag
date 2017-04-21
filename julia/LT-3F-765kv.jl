@@ -1,4 +1,4 @@
-#!/usr/bin/julia
+#!/usr/bin/julia -p2
 #
 # Perfil de campo elétrico
 # EPRI AC - Transmission Line Reference Book - 200kV and above

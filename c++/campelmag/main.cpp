@@ -35,10 +35,10 @@ int main()
 		printf("\n Altura minima dos feixes = [%5.2f %5.2f %5.2f] [m]", lt.hmin, lt.hmin, lt.hmin);
 		printf("\n Distancia entre os feixes = [%5.2f %5.2f %5.2f] [m]", lt.pxfeixes[0], lt.pxfeixes[1], lt.pxfeixes[2]);
 		printf("\n Perfil de medição: ");
-		printf("\n\t\t Xmin: %5.2f", lt.linhamed[0]);
-		printf("\n\t\t Xmax: %5.2f", lt.linhamed[1]);
-		printf("\n\t\t Passo: %5.2f", lt.linhamed[2]);
-		printf("\n\t\t Altura: %5.2f", lt.linhamed[3]);
+		printf("\n\t\tXmin:\t%5.2f", lt.linhamed[0]);
+		printf("\n\t\tXmax:\t%5.2f", lt.linhamed[1]);
+		printf("\n\t\tPasso:\t%5.2f", lt.linhamed[2]);
+		printf("\n\t\tAltura:\t%5.2f", lt.linhamed[3]);
 
 		// Pontos sobre o eixo X (comprimento)
 		Eigen::VectorXd Px {Eigen::VectorXd::LinSpaced(minimo,passo,maximo)};
