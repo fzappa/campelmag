@@ -62,7 +62,7 @@ Eigen::MatrixXcd* Brms(const conf& dados){
 	//Ponteiros Matrizes complexas
 	Eigen::MatrixXcd* ptrBkr = new Eigen::MatrixXcd(ptrXm->size(),3);
 	Eigen::MatrixXcd* ptrBkx = new Eigen::MatrixXcd(ptrXm->size(),3);
-    Eigen::MatrixXcd* ptrBkh = new Eigen::MatrixXcd(ptrXm->size(),3);
+  Eigen::MatrixXcd* ptrBkh = new Eigen::MatrixXcd(ptrXm->size(),3);
 
 	Eigen::MatrixXcd* ptrSaida = new Eigen::MatrixXcd(ptrXm->size(),4);
 
