@@ -1,1 +1,5 @@
-Projetos motivacionais para o estudo das linguagens Julia e C++
+Electric and Magnetic Fields Calculation from Transmission Lines.
+============================================
+
+Personal projects for study Julia and C++ languages.
+-----------------------------------------------------------
