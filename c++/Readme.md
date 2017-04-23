@@ -1,9 +1,13 @@
-Projeto criado utilizando o Codelite 10
+Electric and Magnetic Fields Calculation from Transmission Lines.
+=============================
 
-Implementado:
+Implementations of some functions for electric and magnetic fields calcule from overhead transmission lines.
+---------
 
-Leitura dos dados a partir de arquivo XML.
-
-Saida de relatório em XML.
-
-Geração dos gráficos dos campos elétrico e magnético para um perfil 2D em baixo da LT utilizando o Gnuplot.
+> **About:**
+> 
+>- Project made and tested with Codelite 10 on Arch Linux
+>- Read data from XML.
+>- Report in XML.
+>- Generation of electric and magnetic fields 2D graphs using Gnuplot. 
+>- Formats: PS, SVG, JPG, PNG, PDF and EPSLaTex.
