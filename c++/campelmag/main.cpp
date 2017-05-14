@@ -6,9 +6,9 @@
 #include <vector>
 
 
-#include "FuncoesMag.h"
-#include "GeraGrafico.h"
-#include "ParserXML.h"
+#include "FuncoesMag.hpp"
+#include "GeraGrafico.hpp"
+#include "ParserXML.hpp"
 
 using namespace std;
 using namespace Eigen;

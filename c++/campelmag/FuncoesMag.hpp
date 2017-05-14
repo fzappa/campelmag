@@ -1,9 +1,9 @@
-#ifndef FUNCOESMAG_H
-#define FUNCOESMAG_H
+#ifndef FUNCOESMAG_HPP
+#define FUNCOESMAG_HPP
 
 #include <vector>
 #include <eigen3/Eigen/Dense>
-#include "ParserXML.h"
+#include "ParserXML.hpp"
 
 //Campo magnetico resultante
 Eigen::MatrixXcd* Brms(const conf& dados);

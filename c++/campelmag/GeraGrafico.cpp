@@ -2,7 +2,7 @@
 #include <chrono>
 #include <thread>
 
-#include "GeraGrafico.h"
+#include "GeraGrafico.hpp"
 #include "gnuplot_i.hpp"
 
 // Delay para o programa conseguir acessar o disco

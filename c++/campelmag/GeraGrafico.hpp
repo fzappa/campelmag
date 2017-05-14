@@ -1,7 +1,7 @@
-#ifndef GERAGRAFICO_H
-#define GERAGRAFICO_H
+#ifndef GERAGRAFICO_HPP
+#define GERAGRAFICO_HPP
 
-#include "ParserXML.h"
+#include "ParserXML.hpp"
 
 void gera_grafico(const std::vector<double>*,
 									const std::vector<double>*,

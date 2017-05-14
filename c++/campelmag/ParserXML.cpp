@@ -6,7 +6,7 @@
 #include <exception>
 #include <iostream>
 
-#include "ParserXML.h"
+#include "ParserXML.hpp"
 
 //Referencias
 //http://www.boost.org/doc/libs/1_42_0/doc/html/boost_propertytree/tutorial.html

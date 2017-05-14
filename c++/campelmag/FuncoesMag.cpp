@@ -4,14 +4,14 @@
 
 #include <eigen3/Eigen/Dense>
 
-// Para definicoes de constantes do eigen
+// Para definicoes de constantes do boost
 #include <boost/units/io.hpp>
 #include <boost/units/systems/si.hpp>
 #include <boost/units/systems/si/codata_constants.hpp>
 #include <boost/math/constants/constants.hpp>
 
-#include "FuncoesMag.h"
-#include "ParserXML.h"
+#include "FuncoesMag.hpp"
+#include "ParserXML.hpp"
 
 using namespace std;
 
