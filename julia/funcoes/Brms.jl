@@ -22,15 +22,15 @@ function Brms(I,H,D,P)
 
   @simd for i=1:3
     # Resultado em Tesla
-    @fastmath @inbounds Bkr[:,i] = ((2e-7)*complex(I[i]))./sqrt(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
-    @fastmath @inbounds Bkx[:,i] = ((2e-7)*complex(I[i])*(Xm-D[i]))./sqrt(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
-    @fastmath @inbounds Bkh[:,i] = ((2e-7)*complex(I[i])*(Hm-H[i]))./sqrt(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
+    @fastmath @inbounds Bkr[:,i] = ((2e-7)*complex(I[i]))./sqrt.(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
+    @fastmath @inbounds Bkx[:,i] = ((2e-7)*complex(I[i])*(Xm-D[i]))./sqrt.(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
+    @fastmath @inbounds Bkh[:,i] = ((2e-7)*complex(I[i])*(Hm-H[i]))./sqrt.(complex(Xm-D[i]).^2 + (Hm-H[i])^2);
   end
 
   SBr = sum(Bkr,2);
   SBx = sum(Bkx,2);
   SBh = sum(Bkh,2);
-  Bmag = sqrt(real(SBx).^2 + real(SBh).^2 );
+  Bmag = sqrt.(real(SBx).^2 + real(SBh).^2 );
   #Bmag = sqrt(real(SBx).^2 + imag(SBx).^2 + real(SBh).^2 + imag(SBh).^2);
 
   # Converte para micro Tesla (1e6)

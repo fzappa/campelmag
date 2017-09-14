@@ -10,7 +10,7 @@
 ...
 """
 function Vri(V,Angulos)
-  return [cosd(Angulos[1])*V/sqrt(3) sind(Angulos[1])*V/sqrt(3);
-          cosd(Angulos[2])*V/sqrt(3) sind(Angulos[2])*V/sqrt(3);
-          cosd(Angulos[3])*V/sqrt(3) sind(Angulos[3])*V/sqrt(3);];
+  return [cosd(Angulos[1])*V/sqrt.(3) sind(Angulos[1])*V/sqrt.(3);
+          cosd(Angulos[2])*V/sqrt.(3) sind(Angulos[2])*V/sqrt.(3);
+          cosd(Angulos[3])*V/sqrt.(3) sind(Angulos[3])*V/sqrt.(3);];
 end

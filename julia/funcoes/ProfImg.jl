@@ -12,5 +12,5 @@
 ...
 """
 function ProfImg(R,P,F)
-  return sqrt(R/(pi*F*P));
+  return sqrt.(R/(pi*F*P));
 end

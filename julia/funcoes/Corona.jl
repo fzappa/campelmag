@@ -59,7 +59,7 @@ end
 """
 function CoronaPerdas(Delta,F,Dcond,DistCond,V,Vc)
   A0 = (3.44/Delta)*F;
-  A1 = sqrt( (Dcond*1000) / ( 2*(DistCond*1000) ) );
+  A1 = sqrt.( (Dcond*1000) / ( 2*(DistCond*1000) ) );
   A2 = (V-Vc)*(V-Vc)*0.001;
 
   return A0*A1*A2;
@@ -84,7 +84,7 @@ end
 function CoronaEc(M,Delta,Dcond)
 
   A0 = M*(21.1e3)*(Delta);
-  A1 = (1 + (sqrt(1/0.301)/(sqrt(Delta*Dcond*1000)) ));
+  A1 = (1 + (sqrt.(1/0.301)/(sqrt.(Delta*Dcond*1000)) ));
 
   return A0*A1;
 

@@ -37,7 +37,7 @@ function Erms(P,H,D,Q)
     #Soma as contribuições de cada Linha
     SEx = sum(Ex,2);
     SEy = sum(Ey,2);
-    Erms = sqrt(real(SEx).^2 + imag(SEx).^2 + real(SEy).^2 + imag(SEy).^2);
+    Erms = sqrt.(real(SEx).^2 + imag(SEx).^2 + real(SEy).^2 + imag(SEy).^2);
 
     return [SEx SEy Erms];
 end

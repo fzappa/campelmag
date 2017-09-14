@@ -19,7 +19,7 @@ Epsilon = PhysicalConstants.MKS.VacuumPermittivity;
 """
 function Pkk(H,deq)
   Saida = zeros(3,3);
-  M = (1/(2*pi*Epsilon))*log(4*H/deq);
+  M = (1/(2*pi*Epsilon))*log.(4*H/deq);
   Saida[1,1] = M[1,1];
   Saida[2,2] = M[2,1];
   Saida[3,3] = M[3,1];

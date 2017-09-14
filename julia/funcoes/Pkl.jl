@@ -18,5 +18,5 @@ Epsilon = PhysicalConstants.MKS.VacuumPermittivity;
 ...
 """
 function Pkl(proprio,mutuo)
-  return (1/(2*pi*Epsilon))*log(proprio./mutuo);
+  return (1/(2*pi*Epsilon))*log.(proprio./mutuo);
 end
