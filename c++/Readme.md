@@ -6,7 +6,7 @@ Implementations of some functions for electric and magnetic fields calcule from 
 
 > **About:**
 > 
->- Project made and tested with Codelite 10 on Arch Linux
+>- Project made and tested with Codelite 11 on Arch Linux
 >- Read data from XML.
 >- Report in XML.
 >- Generation of electric and magnetic 2D fields graphs using Gnuplot. 
