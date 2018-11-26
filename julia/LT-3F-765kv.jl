@@ -87,8 +87,8 @@ display(plt.plot(Px, EkVm[:,3], color="red", marker="None", label="E_max"));
 display(plt.title("Campo Elétrico x Perfil de medição"));
 plt.xlabel("Posição na faixa de passagem [m]");
 plt.ylabel("Campo Elétrico [kV/m]");
-plt.grid("on");
-plt.legend(loc="upper right",fancybox="true");
+plt.grid(true);
+plt.legend(loc="upper right",fancybox=true);
 
 
 plt.figure(2);

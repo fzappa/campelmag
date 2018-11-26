@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Alan
-Date                   :=10/12/17
+Date                   :=03/20/18
 CodeLitePath           :=/home/alan/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) $(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) $(IntermediateDirectory)/ParserXML.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/ParserXML.cpp$(ObjectSuffix) $(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) 
 
 
 
@@ -91,14 +91,6 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
-
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
 $(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix): FuncoesMag.cpp $(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/FuncoesMag.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/FuncoesMag.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix): FuncoesMag.cpp
@@ -107,13 +99,13 @@ $(IntermediateDirectory)/FuncoesMag.cpp$(DependSuffix): FuncoesMag.cpp
 $(IntermediateDirectory)/FuncoesMag.cpp$(PreprocessSuffix): FuncoesMag.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/FuncoesMag.cpp$(PreprocessSuffix) FuncoesMag.cpp
 
-$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix): GeraGrafico.cpp $(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/GeraGrafico.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix): GeraGrafico.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix) -MM GeraGrafico.cpp
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
-$(IntermediateDirectory)/GeraGrafico.cpp$(PreprocessSuffix): GeraGrafico.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GeraGrafico.cpp$(PreprocessSuffix) GeraGrafico.cpp
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/ParserXML.cpp$(ObjectSuffix): ParserXML.cpp $(IntermediateDirectory)/ParserXML.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/ParserXML.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ParserXML.cpp$(ObjectSuffix) $(IncludePath)
@@ -122,6 +114,14 @@ $(IntermediateDirectory)/ParserXML.cpp$(DependSuffix): ParserXML.cpp
 
 $(IntermediateDirectory)/ParserXML.cpp$(PreprocessSuffix): ParserXML.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ParserXML.cpp$(PreprocessSuffix) ParserXML.cpp
+
+$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix): GeraGrafico.cpp $(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/alan/Dropbox/git/campelmag/c++/campelmag/GeraGrafico.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix): GeraGrafico.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/GeraGrafico.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/GeraGrafico.cpp$(DependSuffix) -MM GeraGrafico.cpp
+
+$(IntermediateDirectory)/GeraGrafico.cpp$(PreprocessSuffix): GeraGrafico.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GeraGrafico.cpp$(PreprocessSuffix) GeraGrafico.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

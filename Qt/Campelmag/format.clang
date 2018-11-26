@@ -1,0 +1,61 @@
+# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# Use the Google style in this project.
+BasedOnStyle: Google
+
+# Some folks prefer to write "int& foo" while others prefer "int &foo".  The
+# Google Style Guide only asks for consistency within a project, we chose
+# "int& foo" for this project:
+DerivePointerAlignment: false
+PointerAlignment: Right
+
+# Allow double brackets such as std::vector<std::vector<int>>.
+Standard: Cpp11
+
+# Indent 4 spaces at a time.
+IndentWidth: 4
+
+#UseTab: Always
+
+AllowShortIfStatementsOnASingleLine: false
+
+# Keep lines under 100 columns long.
+ColumnLimit: 100
+
+# format braced lists as best suited for C++11 braced lists.
+Cpp11BracedListStyle: true
+
+# Always break before braces
+# BreakBeforeBraces: Allman
+BreakBeforeBraces: Stroustrup
+
+# Indent case labels.
+IndentCaseLabels: false
+
+ColumnLimit: 0
+
+# ANGLE likes to align things as much as possible.
+AlignOperands: true
+AlignConsecutiveAssignments: true
+
+# Use 2 space negative offset for access modifiers
+AccessModifierOffset: -2
+
+# TODO(jmadill): Decide if we want this on. Doesn't have an "all or none" mode.
+AllowShortCaseLabelsOnASingleLine: true
+
+# Useful for spacing out functions in classes
+KeepEmptyLinesAtTheStartOfBlocks: true
+
+IncludeCategories:
+- Regex: '^\"google/cloud/'
+  Priority: 1500
+- Regex: '^\"'
+  Priority: 1000
+- Regex: '^<grpc/'
+  Priority: 2000
+- Regex: '^<google/*'
+  Priority: 3000
+- Regex: '^<.*/.*'
+  Priority: 4000
+- Regex: '^<[^/]*>'
+  Priority: 5000

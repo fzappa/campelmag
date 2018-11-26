@@ -2,6 +2,7 @@
 #include <vector>
 #include <complex>
 
+#define EIGEN_USE_MKL_ALL
 #include <eigen3/Eigen/Dense>
 
 // Para definicoes de constantes do boost

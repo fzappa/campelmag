@@ -1,1 +1,1 @@
-./Release/main.cpp.o ./Release/FuncoesMag.cpp.o ./Release/GeraGrafico.cpp.o ./Release/ParserXML.cpp.o
+./Release/FuncoesMag.cpp.o ./Release/main.cpp.o ./Release/ParserXML.cpp.o ./Release/GeraGrafico.cpp.o
