@@ -447,23 +447,3 @@ class CampelMag(object):
 		saida[:,3] = np.real(Bmag)
 
 		return saida*1e6
-
-
-
-# from campmag import CampelMag
-# cm = CampelMag()
-# LinhaDeMedicao = [-80,80,0.5,1.5]
-# H = [28,28,28]
-# D = [-14.34,0,14.34]
-# EspacSubCond = 0.457
-# V = 765e3
-# Ncond = 4
-# AngulosABC = [120,0,-120]
-# Dcabo = 0.02959
-# DB = cm.db(EspacSubCond, Ncond)
-# DEQ = cm.deq(DB,Dcabo,Ncond)
-# Mp = cm.Pkk(H,DEQ)
-# Mm = cm.Pkl(cm.Skll(D,H), cm.Skl(D,H))
-# P = cm.MatrizP(Mp,Mm)
-# cm.CalcQ(H,D,EspacSubCond,Ncond,Dcabo,V,AngulosABC)
-# cm.CalcEkv(H,D,EspacSubCond,Ncond,Dcabo,V,AngulosABC,LinhaDeMedicao)
