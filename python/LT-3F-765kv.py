@@ -102,3 +102,6 @@ plt.ylabel("Campo Magnético ["+r"$\mu T$"+"]")
 plt.grid("True",which="both",ls="-")
 plt.legend(loc="upper right",fancybox="True")
 plt.show()
+
+
+
