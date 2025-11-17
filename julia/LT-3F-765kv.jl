@@ -1,4 +1,4 @@
-#!/usr/bin/julia -p2
+#!/usr/bin/env julia
 #
 # Perfil de campo elétrico
 # EPRI AC - Transmission Line Reference Book - 200kV and above
@@ -7,13 +7,18 @@
 # 03/08/2016
 #
 # Necessário ter o python-matplotlib
-# No Julia: Pkg.add("PyPlot")
+# No Julia: using Pkg; Pkg.add("PyPlot")
 # Para rodar: só abrir o julia e chamar include("LT-3F-525kv.jl")
 # nT = (V/m)2 / 90,103              mG = (V/m)2 / 9,010.3
+
+# Ativar o projeto local
+using Pkg
+Pkg.activate(@__DIR__)
+
 include("CampelMag.jl")
-using PyCall  #Para poder executar como script
-#using PyPlot
-@pyimport matplotlib.pyplot as plt
+using PyCall
+using PyPlot
+using Printf
 
 #Tensão da Linha (V)
 V = 765e3;
@@ -80,26 +85,26 @@ println(@sprintf "Campo Elétrico Máximo = %5.2f [kV/m]" maximum(real(EkVm[:,3]
 println(@sprintf "Campo Magnético Máximo = %5.2f [micro Tesla]\n\n" maximum(real(B[:,4])));
 
 #display(plt.plot(Px, Py-3.0801, color="red", label="Campo Elétrico"));
-plt.figure(1);
-#display(plt.plot(Px, EkVm[:,1], color="green", marker="None", label="E_x"));
-#display(plt.plot(Px, EkVm[:,2], color="blue", marker="None", label="E_y"));
-display(plt.plot(Px, EkVm[:,3], color="red", marker="None", label="E_max"));
-display(plt.title("Campo Elétrico x Perfil de medição"));
-plt.xlabel("Posição na faixa de passagem [m]");
-plt.ylabel("Campo Elétrico [kV/m]");
-plt.grid(true);
-plt.legend(loc="upper right",fancybox=true);
+figure(1);
+#display(plot(Px, EkVm[:,1], color="green", marker="None", label="E_x"));
+#display(plot(Px, EkVm[:,2], color="blue", marker="None", label="E_y"));
+plot(Px, EkVm[:,3], color="red", marker="None", label="E_max")
+title("Campo Elétrico x Perfil de medição")
+xlabel("Posição na faixa de passagem [m]")
+ylabel("Campo Elétrico [kV/m]")
+grid(true)
+legend(loc="upper right",fancybox=true)
 
 
-plt.figure(2);
-display(plt.plot(Px, B[:,4], color="red", marker="None", label="Bmag"));
-#display(plt.plot(Px, B[:,3], color="green", marker="None", label="Bh"));
-#display(plt.plot(Px, B[:,2], color="blue", marker="None", label="Bx"));
-#display(plt.plot(Px, B[:,1], color="cyan", marker="None", label="Br"));
-display(plt.title("Campo Magnético x Perfil de medição"));
-#display(plt.title("\$\\alpha + \\beta\$"));
-plt.xlabel("Posição na faixa de passagem [m]");
-plt.ylabel("Campo Magnético [\$\\mu T\$]");
-plt.grid("True",which="both",ls="-")
-plt.legend(loc="upper right",fancybox="true");
-plt.show();
+figure(2);
+plot(Px, B[:,4], color="red", marker="None", label="Bmag")
+#display(plot(Px, B[:,3], color="green", marker="None", label="Bh"));
+#display(plot(Px, B[:,2], color="blue", marker="None", label="Bx"));
+#display(plot(Px, B[:,1], color="cyan", marker="None", label="Br"));
+title("Campo Magnético x Perfil de medição")
+#display(title("\$\\alpha + \\beta\$"));
+xlabel("Posição na faixa de passagem [m]")
+ylabel("Campo Magnético [\$\\mu T\$]")
+grid("True",which="both",ls="-")
+legend(loc="upper right",fancybox="true")
+PyPlot.show()

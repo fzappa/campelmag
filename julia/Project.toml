@@ -1,0 +1,19 @@
+name = "CampelMag"
+uuid = "8c5a9f28-1234-5678-9abc-def012345678"
+version = "0.1.0"
+authors = ["Alan Franco Rosa"]
+
+[deps]
+PhysicalConstants = "5ad8b20f-a522-5ce9-bfc9-ddf1d5bda6ab"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+
+[compat]
+PhysicalConstants = "0.2"
+Printf = "1.11.0"
+PyCall = "1.92"
+PyPlot = "2.10"
+Unitful = "1"
+julia = "1.6"

@@ -20,23 +20,23 @@ function Erms(P,H,D,Q)
     Hm = P[4];  #Altura do ponto de medição
 
     @simd for i=1:3
-      Xm = Px - D[i]; #Distância entre o ponto de medição e a linha
+      Xm = Px .- D[i]; #Distância entre o ponto de medição e a linha
       Hk = H[i]; #Altura da linha
 
       C = complex(Q[i,1],Q[i,2])/(2*pi*Epsilon) # constante
-      @fastmath @inbounds T1x = Xm./(Xm.^2 + (Hk-Hm)^2);
-      @fastmath @inbounds T2x = Xm./(Xm.^2 + (Hk+Hm)^2);
+      @fastmath @inbounds T1x = Xm./(Xm.^2 .+ (Hk-Hm)^2);
+      @fastmath @inbounds T2x = Xm./(Xm.^2 .+ (Hk+Hm)^2);
 
-      @fastmath @inbounds T1y = (Hm-Hk)./(Xm.^2 + (Hk-Hm)^2);
-      @fastmath @inbounds T2y = (Hm+Hk)./(Xm.^2 + (Hk+Hm)^2);
+      @fastmath @inbounds T1y = (Hm-Hk)./(Xm.^2 .+ (Hk-Hm)^2);
+      @fastmath @inbounds T2y = (Hm+Hk)./(Xm.^2 .+ (Hk+Hm)^2);
 
-      @fastmath @inbounds Ex[:,i] = C*(T1x-T2x);
-      @fastmath @inbounds Ey[:,i] = C*(T1y-T2y);
+      @fastmath @inbounds Ex[:,i] = C.*(T1x.-T2x);
+      @fastmath @inbounds Ey[:,i] = C.*(T1y.-T2y);
     end
 
     #Soma as contribuições de cada Linha
-    SEx = sum(Ex,2);
-    SEy = sum(Ey,2);
+    SEx = sum(Ex, dims=2);
+    SEy = sum(Ey, dims=2);
     Erms = sqrt.(real(SEx).^2 + imag(SEx).^2 + real(SEy).^2 + imag(SEy).^2);
 
     return [SEx SEy Erms];

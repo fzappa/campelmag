@@ -1,10 +1,3 @@
-# Para instalar o pacote com as constantes físicas
-# Pkg.clone("https://github.com/DataWookie/PhysicalConstants.jl")
-
-using PhysicalConstants
-Epsilon = PhysicalConstants.MKS.VacuumPermittivity;
-
-
 """
 ...
 
