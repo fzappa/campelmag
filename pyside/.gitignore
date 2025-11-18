@@ -1,0 +1,31 @@
+# Ambiente virtual
+venv/
+env/
+ENV/
+.venv/
+
+# uv
+uv.lock
+.python-version
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

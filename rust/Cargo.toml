@@ -1,0 +1,26 @@
+[package]
+name = "campelmag"
+version = "0.1.0"
+edition = "2021"
+authors = ["Alan Franco Rosa"]
+description = "Electric and Magnetic Fields Calculation for Transmission Lines"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+ndarray = "0.16"
+num-complex = "0.4"
+plotters = { version = "0.3", optional = true, default-features = false, features = ["bitmap_backend", "bitmap_encoder", "line_series", "ab_glyph"] }
+
+[features]
+default = []
+plotting = ["plotters"]
+
+[lib]
+name = "campelmag"
+path = "src/lib.rs"
+
+[[example]]
+name = "lt_765kv"
+path = "examples/lt_765kv.rs"
+required-features = ["plotting"]

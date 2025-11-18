@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "campelmag-gui"
+version = "0.7.0"
+description = "Interface gráfica PySide6 para cálculo de campos elétrico e magnético em linhas de transmissão"
+readme = "README.md"
+authors = [
+    {name = "Alan Franco"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.6.0",
+    "numpy>=2.0.0",
+    "scipy>=1.12.0",
+    "matplotlib>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=25.11.0",
+    "mypy>=1.0.0",
+    "pylint>=4.0.3",
+]
+
+[project.scripts]
+campelmag-gui = "campelmag_gui.main:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py311', 'py312', 'py313']
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
